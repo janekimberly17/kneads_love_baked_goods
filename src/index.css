@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  /* Kneads Love palette, sampled from the posters */
+  --color-royal: #1a47a8;
+  --color-royal-dark: #123a8c;
+  --color-sky: #8fb4e3;
+  --color-sky-light: #c9dbf3;
+  --color-cream: #f4f1ea;
+  --color-paper: #fbf8f1;
+  --color-cocoa: #4a3222;
+  --color-blondie: #f4c04f;
+  --color-coral: #f08a74;
+  --color-leaf: #8cc63f;
+  --color-hibiscus: #e94f8a;
+  --color-phone: #d7262e;
+
+  --font-display: "Chewy", "Comic Sans MS", cursive;
+  --font-hand: "Patrick Hand", "Comic Sans MS", cursive;
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream font-sans text-cocoa antialiased;
+  }
+}
+
+/* Sarawak batik-inspired repeat, as on the menu poster */
+.bg-batik {
+  background-color: var(--color-sky);
+  background-image: url("./assets/batik.svg");
+  background-size: 160px 160px;
+}
+
+/* Scalloped "stamp" edge, as on the preorder poster.
+   Set --scallop-bg to the fill colour. */
+.scallop {
+  --scallop-bg: var(--color-paper);
+  --r: 10px;
+  position: relative;
+  isolation: isolate;
+}
+.scallop::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--r) * -1);
+  z-index: -1;
+  background:
+    linear-gradient(var(--scallop-bg), var(--scallop-bg)) var(--r) var(--r) / calc(100% - 2 * var(--r)) calc(100% - 2 * var(--r)) no-repeat,
+    radial-gradient(circle at calc(var(--r) * 1.2) var(--r), var(--scallop-bg) calc(var(--r) - 0.5px), transparent var(--r)) 0 0 / calc(var(--r) * 2.4) calc(var(--r) * 2) repeat-x,
+    radial-gradient(circle at calc(var(--r) * 1.2) var(--r), var(--scallop-bg) calc(var(--r) - 0.5px), transparent var(--r)) 0 100% / calc(var(--r) * 2.4) calc(var(--r) * 2) repeat-x,
+    radial-gradient(circle at var(--r) calc(var(--r) * 1.2), var(--scallop-bg) calc(var(--r) - 0.5px), transparent var(--r)) 0 0 / calc(var(--r) * 2) calc(var(--r) * 2.4) repeat-y,
+    radial-gradient(circle at var(--r) calc(var(--r) * 1.2), var(--scallop-bg) calc(var(--r) - 0.5px), transparent var(--r)) 100% 0 / calc(var(--r) * 2) calc(var(--r) * 2.4) repeat-y;
+}
+
+/* Rough paper card with a soft lift */
+.paper {
+  background-color: var(--color-paper);
+  box-shadow: 0 1px 0 rgb(74 50 34 / 0.06), 0 10px 24px -12px rgb(18 58 140 / 0.45);
+}
+
+/* Highlighter-tape label, like "BLONDIE" / "BROWNIE" on the menu */
+.tape {
+  @apply inline-block px-2 py-0.5 font-sans font-extrabold uppercase italic tracking-wide;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
