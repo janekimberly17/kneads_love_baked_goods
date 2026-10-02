@@ -75,7 +75,7 @@ export default function Checkout({
 
       <h3 className="mt-8 border-t-2 border-royal/15 pt-6 font-display text-2xl text-royal">Your details</h3>
       <p className="mt-1 font-hand text-lg text-cocoa/80">
-        Orders close {ORDER_CUTOFF}. We’ll confirm everything with you on WhatsApp.
+        We bake fresh in weekly batches! Submit your order before {ORDER_CUTOFF} to get your brownies this week. Orders placed after the cutoff will automatically roll over to next week’s batch. We’ll confirm everything with you on WhatsApp.
       </p>
 
       <div className="mt-5 space-y-5">
@@ -86,7 +86,7 @@ export default function Checkout({
             maxLength={80}
             autoComplete="name"
             className={inputClass}
-            placeholder="e.g. Nur Aisyah"
+            placeholder="e.g. Kimmy"
             value={form.name}
             onChange={(e) => onChange('name', e.target.value)}
             {...errorProps('name')}

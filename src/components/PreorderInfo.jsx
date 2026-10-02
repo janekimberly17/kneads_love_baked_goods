@@ -1,7 +1,7 @@
 import { ORDER_CUTOFF, PICKUP_AREA } from '../data/fulfilment.js'
 
 const STEPS = [
-  { title: `Order by ${ORDER_CUTOFF}`, text: 'Pick your treats and send your order through this page.' },
+  { title: `Order by ${ORDER_CUTOFF} for this weekend's bake`, text: 'Pick your treats and send your order through this page.' },
   { title: 'We confirm on WhatsApp', text: 'We’ll message you to confirm your details, timing and payment.' },
   {
     title: 'Pickup or delivery',

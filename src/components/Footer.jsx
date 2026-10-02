@@ -1,7 +1,6 @@
 const LINKS = [
   // Replace the placeholders with your real handles / number.
   { label: 'Instagram', href: 'https://instagram.com/' },
-  { label: 'WhatsApp', href: 'https://wa.me/60000000000' },
 ]
 
 export default function Footer() {
